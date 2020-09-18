@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'proyecto_sofka'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    serenityVersion = '2.0.55'
+    serenityCucumberVersion = '1.9.8'
+}
+dependencies {
+    compile "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    compile "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    compile "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    compile "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
+    testCompile "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+    testCompile 'org.slf4j:slf4j-simple:1.7.25'
+}
